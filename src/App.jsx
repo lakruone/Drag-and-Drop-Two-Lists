@@ -78,7 +78,6 @@ function App() {
       const overIndex = findItemIndex(overItems, over.id);
 
     
-      console.log('overIndex ',overIndex);
 
       return {
         ...prev,
@@ -103,8 +102,8 @@ function App() {
       onDragEnd={handleDragEnd}
       onDragOver={handleDragOver}
       >
-        <List id='ListOne' items={itemList.listOne} listName='List 1'/>
-        <List id='ListTwo' items={itemList.listTwo} listName='List 2'/>
+        <List id='listOne' items={itemList.listOne} listName='List 1'/>
+        <List id='listTwo' items={itemList.listTwo} listName='List 2'/>
      </DndContext>
 
      </div>
