@@ -1,5 +1,5 @@
 import React from 'react'
-import './Column.css'
+import './List.css'
 import {
     SortableContext,
     verticalListSortingStrategy
@@ -8,7 +8,7 @@ import Item from '../item/Item';
 import { useDroppable } from '@dnd-kit/core';
 
 
-const Column = ({items, id}) => {
+const List = ({items, id, listName}) => {
 
   const { setNodeRef } = useDroppable({id})
   return (
@@ -17,7 +17,8 @@ const Column = ({items, id}) => {
         items={items.map(i => i.id)}
         strategy={verticalListSortingStrategy}
       >
-        <div ref={setNodeRef} className='column'>
+        <div ref={setNodeRef} className='list'>
+          <h2>{listName}</h2>
           {items.map(item => (
               <Item id={item.id} title={item.title} key={item.id}/>
           ))}
@@ -26,4 +27,4 @@ const Column = ({items, id}) => {
   )
 }
 
-export default Column
+export default List

@@ -1,21 +1,21 @@
 import { useState } from 'react'
 import './App.css'
 import {DndContext, closestCorners} from '@dnd-kit/core';
-import Column from './components/column/Column';
+import List from './components/list/List';
 import { arrayMove } from '@dnd-kit/sortable';
 
 function App() {
  
   const [itemList, setItemList] = useState({
-    columnOne: [
-      {id:1, title: 'item 1'},
-      {id:2, title: 'item 2'},
-      {id:3, title: 'item 3'}
+    listOne: [
+      {id:1, title: 'Item 1'},
+      {id:2, title: 'Item 2'},
+      {id:3, title: 'Item 3'}
     ],
-    columnTwo: [
-      {id:4, title: 'item 4'},
-      {id:5, title: 'item 5'},
-      {id:6, title: 'item 6'}
+    listTwo: [
+      {id:4, title: 'Item 4'},
+      {id:5, title: 'Item 5'},
+      {id:6, title: 'Item 6'}
     ]
 })
 
@@ -103,8 +103,8 @@ function App() {
       onDragEnd={handleDragEnd}
       onDragOver={handleDragOver}
       >
-        <Column id='columnOne' items={itemList.columnOne}/>
-        <Column id='columnTwo' items={itemList.columnTwo}/>
+        <List id='ListOne' items={itemList.listOne} listName='List 1'/>
+        <List id='ListTwo' items={itemList.listTwo} listName='List 2'/>
      </DndContext>
 
      </div>
