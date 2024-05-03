@@ -77,8 +77,6 @@ function App() {
       const activeIndex = findItemIndex(activeItems,active.id);
       const overIndex = findItemIndex(overItems, over.id);
 
-    
-
       return {
         ...prev,
         [activeContainer]: [
@@ -97,17 +95,15 @@ function App() {
     <>
      <h3>Drag And Drop List</h3>
      <div className='App'>
-     <DndContext
-      collisionDetection={closestCorners}
-      onDragEnd={handleDragEnd}
-      onDragOver={handleDragOver}
-      >
-        <List id='listOne' items={itemList.listOne} listName='List 1'/>
-        <List id='listTwo' items={itemList.listTwo} listName='List 2'/>
-     </DndContext>
-
+      <DndContext
+        collisionDetection={closestCorners}
+        onDragEnd={handleDragEnd}
+        onDragOver={handleDragOver}
+        >
+          <List id='listOne' items={itemList.listOne} listName='List 1'/>
+          <List id='listTwo' items={itemList.listTwo} listName='List 2'/>
+      </DndContext>
      </div>
-     
     </>
   )
 }
